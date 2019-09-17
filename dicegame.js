@@ -32,6 +32,7 @@ function GameMasterLogic(){
     console.log("You hit " +  puttResult + " yards with your putter. You have " + distanceRemain + " yards remaining.");
     console.log("Once last chance to get it in!!!");
     let bonusResult = BonusFinalShot();
+    console.log("Thanks for playing, come back again anytime!!!")
 
 }
 
@@ -75,20 +76,37 @@ function Putter(){
 	return valueGrabP;
 }
 
-// function BonusFinalShot(){
-// 	let randomNumberB = rollDie(8);
-// 		if(randomNumberB === 1) {
-// 			console.log("Awesome Shot!!!")
-// 		} else if(randomNumberB === 2) {
-// 			console.log("In and Out!!!")
+function BonusFinalShot(){
+	let randomNumberB = rollDie(8);
+		if(randomNumberB === 1) {
+			console.log("Awesome Shot!!!");
+		
+		} else if(randomNumberB === 2) {
+			console.log("In and Out!!!");
 
-// 		} else if(randomNumberB === 3) {
-// 			console.log("You need more PRACTICE!!!")
-// 		}
+		} else if(randomNumberB === 3) {
+			console.log("You need more PRACTICE!!!");
 		
+		} else if(randomNumberB === 4){
+			console.log("Great Shot!!!");
 		
+		} else if(randomNumberB === 5) {
+			console.log("Almost doesn't count!!!");
+
+		} else if(randomNumberB === 6) {
+			console.log("Winner!!!");
+
+		} else if(randomNumberB === 7) {
+			console.log("Miss by a mile!!!");
+
+		} else if(randomNumberB === 8) {
+			console.log("Lucky, in the hole shot!!!");
+
+		}
 		
+}
 		
+
 
 GameMasterLogic();
 
