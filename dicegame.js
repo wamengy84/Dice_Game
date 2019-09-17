@@ -9,19 +9,29 @@
 
 function GameLogic(){
 	let distanceRemain = 1150;
-	console.log("Make in the hole in 5. You have " + distanceRemain + " yards remaining.")
-	let introMessage = prompt("Are you ready to roll?");
-    let drvierResult = Drivers();
-    distanceRemain = distanceRemain - drvierResult;
-    	console.log("You hit " +  drvierResult + " yards with your driver. You have " + distanceRemain + " yards remaining.");
+	console.log("Make it in the hole in 5. You have " + distanceRemain + " yards remaining.");
+	let introMessage = prompt("Are you ready to roll? Use your Driver off the teebox to start off.");
+    let driverResult = Drivers();
+    distanceRemain = distanceRemain - driverResult;
+    console.log("You hit " +  driverResult + " yards with your driver. You have " + distanceRemain + " yards remaining.");
+    console.log("Now that you're on the fairway, let's use your fairway Woods.");
+    let woodsResult = Woods();
+    distanceRemain = distanceRemain - woodsResult;
+    console.log("You hit " +  woodsResult + " yards with your fairway wood. You have " + distanceRemain + " yards remaining.");
+}
 
+function Woods(){
+	let woodsDistance = [350, 300, 250, 200];
+	let randomNumberW = rollDie(4);
+	let valueGrabW = woodsDistance[randomNumberW - 1];
+	return valueGrabW;
 }
 
 function Drivers(){
 		let driverDistance = [400, 300, 200];
-		let randomNumber = rollDie(3);
-		let valueGrab = driverDistance[randomNumber - 1];
-		return valueGrab;
+		let randomNumberD = rollDie(3);
+		let valueGrabD = driverDistance[randomNumberD - 1];
+		return valueGrabD;
 }
 
 
