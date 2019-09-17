@@ -7,39 +7,28 @@
 
 // console.log(rollDie(20));
 
+function GameLogic(){
+	let distanceRemain = 1150;
+	console.log("Make in the hole in 5. You have " + distanceRemain + " yards remaining.")
+	let introMessage = prompt("Are you ready to roll?");
+    let drvierResult = Drivers();
+    distanceRemain = distanceRemain - drvierResult;
+    	console.log("You hit " +  drvierResult + " yards with your driver. You have " + distanceRemain + " yards remaining.");
 
-
-function rollDieWoods(numberSides){
-	let side = Math.floor(Math.random() * numberSides + 1)
-		let driverDistance = [400, 300, 200];
-		let distanceTotalYards = 1150;
-		let distanceUpdate = distanceTotalYards - ;
-		return side;
 }
 
-console.log(rollDieWoods(3));
+function Drivers(){
+		let driverDistance = [400, 300, 200];
+		let randomNumber = rollDie(3);
+		let valueGrab = driverDistance[randomNumber - 1];
+		return valueGrab;
+}
 
 
+function rollDie(numberSides){
+	let side = Math.floor(Math.random() * numberSides + 1);
+	return side;
+}
 
+GameLogic();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function runGame() {
-//     // runs the game
-// }
