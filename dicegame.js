@@ -18,7 +18,14 @@ function GameMasterLogic(){
     let woodsResult = Woods();
     distanceRemain = distanceRemain - woodsResult;
     console.log("You hit " +  woodsResult + " yards with your fairway wood. You have " + distanceRemain + " yards remaining.");
-    console.log("You're getting closer to the pin. Let's see if we can get it closer with the irons.");
+    	if(distanceRemain <= 650){
+    		console.log("You're getting closer to the pin. Let's see if we can get it closer with the irons.");
+    	
+    	} else if(distanceRemain > 650){
+    		console.log("You need to get closer, let's get a better shot with the Woods again.");
+
+    	}
+    
     let ironsResult = Irons();
     distanceRemain = distanceRemain - ironsResult;
     console.log("You hit " +  ironsResult + " yards with your irons. You have " + distanceRemain + " yards remaining.");
@@ -32,7 +39,7 @@ function GameMasterLogic(){
     console.log("You hit " +  puttResult + " yards with your putter. You have " + distanceRemain + " yards remaining.");
     console.log("Once last chance to get it in!!!");
     let bonusResult = BonusFinalShot();
-    console.log("Thanks for playing, come back again anytime!!!")
+    console.log("Thanks for playing, come back again anytime!!!");
 
 }
 
