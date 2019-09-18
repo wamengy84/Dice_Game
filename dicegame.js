@@ -103,28 +103,28 @@ function Putter(){  //7 sided dice function
 function BonusFinalShot(){  //8 sided dice function 
 	let randomNumberB = rollDie(8);
 		if(randomNumberB === 1) {
-			console.log("Awesome Shot!!!");
+			console.log("In!!! Just An Awesome Shot!!!");
 		
 		} else if(randomNumberB === 2) {
-			console.log("In and Out!!!");
+			console.log("Just In And Out!!!");
 
 		} else if(randomNumberB === 3) {
-			console.log("You need more PRACTICE!!!");
+			console.log("Miss It, You Need More PRACTICE!!!");
 		
 		} else if(randomNumberB === 4){
-			console.log("Great Shot!!!");
+			console.log("WOW It Went In, Great Shot!!!");
 		
 		} else if(randomNumberB === 5) {
-			console.log("Almost doesn't count!!!");
+			console.log("Ouch!!! Almost Doesn't Count!!!");
 
 		} else if(randomNumberB === 6) {
-			console.log("Winner!!!");
+			console.log("And It's In, Winner!!!");
 
 		} else if(randomNumberB === 7) {
-			console.log("Miss by a mile!!!");
+			console.log("You Miss It By A Mile!!!");
 
 		} else if(randomNumberB === 8) {
-			console.log("Lucky, in the hole shot!!!");
+			console.log("Lucky, In The Hole Shot!!!");
 
 		}
 		
