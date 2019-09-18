@@ -1,11 +1,15 @@
 "use strict"
 
 function GameMaster(){
+	let diceRollCount = 0;
+	while(diceRollCount <= 5){
+	
 	let distanceRemain = 1150;  //overall distances to achieve
 	console.log("Make it in the hole in 5. You have " + distanceRemain + " yards remaining.");  
 	let introMessage = prompt("Are you ready to roll? Use your Driver off the teebox to start off.");
     
     let driverResult = Drivers();  //distance achieved with 3 sided dice function
+    diceRollCount++
     distanceRemain = distanceRemain - driverResult;  //distance update after first roll
     console.log("You hit " +  driverResult + " yards with your driver. You have " + distanceRemain + " yards remaining.");
     console.log("Now that you're on the fairway, let's use your fairway Woods.");
@@ -13,6 +17,7 @@ function GameMaster(){
     do{
     let woodsResult = Woods();  //distance achieved with 4 sided dice function
     distanceRemain = distanceRemain - woodsResult;  //distance update after roll
+    diceRollCount++;
     console.log("You hit " +  woodsResult + " yards with your fairway wood. You have " + distanceRemain + " yards remaining.");
     	if(distanceRemain <= 650){ 
     		console.log("You're getting closer to the pin. Let's see if we can get it closer with the irons.");
@@ -26,6 +31,7 @@ function GameMaster(){
     do{
     let ironsResult = Irons();  // distance achieved with 5 sided dice function
     distanceRemain = distanceRemain - ironsResult;
+    diceRollCount++;
     console.log("You hit " +  ironsResult + " yards with your irons. You have " + distanceRemain + " yards remaining.");
     	if(distanceRemain <= 300){
     		console.log("You're in range, time to change it up to your pitch wedge.");
@@ -39,7 +45,8 @@ function GameMaster(){
     do{
     let wedgesResult = PWedges();  //distance achieved with 6 sided dice function
     distanceRemain = distanceRemain - wedgesResult;
-    console.log("You hit " +  wedgesResult + " yards with your wedge. You have " + distanceRemain + " yards remaining.");
+    diceRollCount++;
+    console.log("You hit " +  wedgesResult + " feet with your wedge. You have " + distanceRemain + " feet remaining.");
     	if(distanceRemain <= 60){
     		console.log("Simple now, just make a good putt.");
     	
@@ -52,10 +59,12 @@ function GameMaster(){
 
     let puttResult = Putter();  //distance achieved with 7 sided dice function
     distanceRemain = distanceRemain - puttResult;
-    console.log("You hit " +  puttResult + " yards with your putter. You have " + distanceRemain + " yards remaining.");
+    diceRollCount++;
+    console.log("You hit " +  puttResult + " feet with your putter. You have " + distanceRemain + " feet remaining.");
     console.log("Once last chance to get it in!!!");
     
     let bonusResult = BonusFinalShot();  //results of bonus dice function
+    diceRollCount++ 
     console.log("Thanks for playing, come back again anytime!!!");
 
 }
@@ -70,6 +79,7 @@ function Drivers(){  //3 sided dice function
 		let randomNumberD = rollDie(3);
 		let valueGrabD = driverDistance[randomNumberD - 1];
 		return valueGrabD;
+
 }
 
 function Woods(){  //4 sided dice function
@@ -130,7 +140,7 @@ function BonusFinalShot(){  //8 sided dice function
 		
 }
 		
-
+}
 
 GameMaster();
 
