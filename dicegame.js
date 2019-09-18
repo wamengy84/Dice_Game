@@ -1,12 +1,5 @@
 "use strict"
 
-// function rollDie(numberSides){ //function name(parameter)
-// 	let side = Math.floor(Math.random() * numberSides + 1)  //var sides = Round #/returns random # between number of sides(+1 includes last #)
-// 		return sides;
-// }
-
-// console.log(rollDie(20));
-
 function GameMasterLogic(){
 	let distanceRemain = 1150;  //overall distances to aschieve
 	console.log("Make it in the hole in 5. You have " + distanceRemain + " yards remaining.");  
@@ -17,6 +10,7 @@ function GameMasterLogic(){
     console.log("You hit " +  driverResult + " yards with your driver. You have " + distanceRemain + " yards remaining.");
     console.log("Now that you're on the fairway, let's use your fairway Woods.");
     
+    do{
     let woodsResult = Woods();  //distance achieved with 4 sided dice function
     distanceRemain = distanceRemain - woodsResult;  //distance update after second roll
     console.log("You hit " +  woodsResult + " yards with your fairway wood. You have " + distanceRemain + " yards remaining.");
@@ -24,9 +18,10 @@ function GameMasterLogic(){
     		console.log("You're getting closer to the pin. Let's see if we can get it closer with the irons.");
     	
     	} else if(distanceRemain > 650){
-    		console.log("You need to get closer, let's get a better shot with the Woods again.");
-
+    		console.log("You still have lots of distance to cover. Use your Woods again to cover more ground.")
+	
     	}
+    } while(distanceRemain > 650);
     
     let ironsResult = Irons();  // distance achieved with 5 sided dice function
     distanceRemain = distanceRemain - ironsResult;
