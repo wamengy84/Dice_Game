@@ -3,13 +3,13 @@
 function GameMaster(){
 	let diceRollCount = 0;
 	while(diceRollCount <= 5){
-	
+		return GameMaster();
 	let distanceRemain = 1150;  //overall distances to achieve
 	console.log("Make it in the hole in 5. You have " + distanceRemain + " yards remaining.");  
 	let introMessage = prompt("Are you ready to roll? Use your Driver off the teebox to start off.");
     
     let driverResult = Drivers();  //distance achieved with 3 sided dice function
-    diceRollCount++
+    diceRollCount++;
     distanceRemain = distanceRemain - driverResult;  //distance update after first roll
     console.log("You hit " +  driverResult + " yards with your driver. You have " + distanceRemain + " yards remaining.");
     console.log("Now that you're on the fairway, let's use your fairway Woods.");
@@ -137,7 +137,8 @@ function BonusFinalShot(){  //8 sided dice function
 			console.log("Lucky, In The Hole Shot!!!");
 
 		}
-		
+
+// function RollDiceCounter()
 }
 		
 }
